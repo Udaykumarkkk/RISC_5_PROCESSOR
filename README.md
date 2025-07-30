@@ -1,4 +1,5 @@
 # RISC_5_PROCESSOR
+![1](https://github.com/user-attachments/assets/d5c467b8-3f3b-4202-a7df-432043328689)
 
 
 # OBJECTIVE
@@ -12,6 +13,7 @@ To design, implement, and verify a simple 32-bit RISC-V processor core based on 
 This project involves building a modular RISC-V processor from scratch. The processor executes basic instructions like arithmetic, logical, memory access, and control flow operations. It is based on the RV32I base integer instruction set, suitable for embedded systems.
 
 # RISC_5_PROCESSOR ARCHITECTURE
+<img width="475" height="358" alt="2" src="https://github.com/user-attachments/assets/a7a46a45-3d57-488c-a02c-047d541f656e" />
 
 
 # MAIN MODULES IN THE DESIGN 
