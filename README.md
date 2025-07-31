@@ -1,5 +1,6 @@
 # RISC_5_PROCESSOR
 
+![1](https://github.com/user-attachments/assets/cca0d359-4075-41c6-9ac5-ecc449283aed)
 
 # OBJECTIVE
 
