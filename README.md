@@ -243,3 +243,8 @@ class my_riscv_test extends uvm_test;
     endtask
 endclass
 
+
+
+# output for RISC 5 PROCESSOR
+
+<img width="1565" height="690" alt="Screenshot 2025-07-30 205731" src="https://github.com/user-attachments/assets/66ab688a-4eb2-4047-b431-b1b46810a0ec" />
