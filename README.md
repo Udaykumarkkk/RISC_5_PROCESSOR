@@ -17,6 +17,15 @@ This project involves building a modular RISC-V processor from scratch. The proc
 
 
 
+he function of a rising edge detector is to identify the specific moment when the input signal undergoes a rising
+transition. The program counter (PC) points to the current instruction. Its input, PCIN, indicates the address of the
+next instruction. Instruction memory, often referred to as the instruction cache, is a component of the processor's
+memory hierarchy that stores the machine code instructions to be executed by the processor. The register file is a
+small, high-speed storage area within the processor that stores temporary data and operands. It consists of a set of
+registers, each capable of holding a fixed amount of data (typically 32). Data memory is only accessed by load and
+store instructions. ALU performs operations based on the instruction set we are given.
+
+
 # MAIN MODULES IN THE DESIGN 
 
 
@@ -72,6 +81,7 @@ module pc(input clk, input reset, input [31:0] next_pc, output reg [31:0] pc_out
       pc_out <= next_pc;
   end
 endmodule
+<img width="807" height="811" alt="Screenshot 2025-08-02 144032" src="https://github.com/user-attachments/assets/d5ff37eb-3318-44e9-b8d1-f1d83dd33dcf" />
 
 
 // Module Instruction Memory
@@ -83,6 +93,7 @@ module instr_mem(input [31:0] addr, output [31:0] instr);
   assign instr = mem[addr[9:2]]; // Word-aligned access
 endmodule
 
+<img width="705" height="801" alt="Screenshot 2025-08-02 144018" src="https://github.com/user-attachments/assets/3fd6c607-95d0-4336-956f-8b5710a23a5c" />
 
 
 // Module Register File
@@ -101,6 +112,7 @@ module register_file(input clk, input reg_write,
     if (reg_write && rd != 0)
       regs[rd] <= write_data;
 endmodule
+<img width="809" height="805" alt="Screenshot 2025-08-02 143954" src="https://github.com/user-attachments/assets/b79c0fbd-9f67-4457-9419-9373ab1cd793" />
 
 
 // Module ALU
@@ -119,6 +131,9 @@ module alu(input [31:0] a, b,
     endcase
   end
 endmodule
+
+<img width="1071" height="824" alt="Screenshot 2025-08-02 143943" src="https://github.com/user-attachments/assets/e7ad551d-4323-40f6-b86c-41440f4c2574" />
+
 
 // Module Data Memory
 module data_mem(input clk,
@@ -139,6 +154,7 @@ module data_mem(input clk,
     else
       read_data = 0;
 endmodule
+<img width="748" height="798" alt="Screenshot 2025-08-02 143930" src="https://github.com/user-attachments/assets/ad22643e-fd82-4731-be03-6fbe6697a244" />
 
 
 // Module Control Unit
@@ -168,6 +184,9 @@ module control_unit(input [6:0] opcode,
     endcase
   end
 endmodule
+<img width="804" height="595" alt="Screenshot 2025-08-02 143917" src="https://github.com/user-attachments/assets/bab2fbbf-5163-49ab-b009-6177e908485f" />
+
+
 
 
 // Top Module
@@ -196,6 +215,7 @@ module top_module(input clk, input reset);
 
   assign next_pc = pc_out + 4;
 endmodule
+<img width="808" height="794" alt="Screenshot 2025-08-02 144045" src="https://github.com/user-attachments/assets/96084f3e-4cd3-4d61-a8a1-e1531ed02ae1" />
 
 
 
@@ -224,6 +244,7 @@ module tb_top_module;
     #200 $finish;
   end
 endmodule
+<img width="720" height="766" alt="Screenshot 2025-08-02 144109" src="https://github.com/user-attachments/assets/c5caf8e0-65d7-43f8-b9ff-70954648c97c" />
 
 
 // UVM CODE For Risc 5 Processor ( UVM verification )
@@ -243,8 +264,16 @@ class my_riscv_test extends uvm_test;
     endtask
 endclass
 
+<img width="866" height="798" alt="Screenshot 2025-08-02 144257" src="https://github.com/user-attachments/assets/eb76fc16-d845-40f1-a522-4385b6effd0c" />
 
 
 # output for RISC 5 PROCESSOR
 
 <img width="1565" height="690" alt="Screenshot 2025-07-30 205731" src="https://github.com/user-attachments/assets/66ab688a-4eb2-4047-b431-b1b46810a0ec" />
+<img width="1261" height="546" alt="Screenshot 2025-08-02 143348" src="https://github.com/user-attachments/assets/47aa6f52-53c4-49fc-942d-c191e5aa8c1a" />
+
+
+
+# CONCLUSION
+The project focuses on the design of single cycle RISC-V processor. A compact and high-speed system can be designed by using RISC V processor which can be used to develop a low-cost real-time systems with fewer number of LUT’s.
+
